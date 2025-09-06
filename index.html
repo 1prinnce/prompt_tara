@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prompt.Store – Anime Gallery</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="brand">
+      <h2>Prompt.Store</h2>
+      <span class="tag">Anime Inspired Visuals</span>
+    </div>
+    <div class="controls">
+      <div class="search-wrap">
+        <input type="text" id="searchInput" placeholder="Search..." oninput="filterSearch()" />
+        <button id="clearSearch" onclick="clearSearch()">✕</button>
+      </div>
+      <button class="mode-toggle" onclick="toggleTheme()">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero cinematic">
+    <div class="hero-content">
+      <h1>Explore Stunning Anime Worlds</h1>
+      <p>Dive into a cinematic gallery inspired by Makoto Shinkai & Ghibli</p>
+      <!-- Slideshow Controls -->
+      <div class="slideshow-controls">
+        <button onclick="prevSlide()">⟨</button>
+        <button onclick="nextSlide()">⟩</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <div class="categories">
+    <button class="cat-btn active" data-cat="all" onclick="selectCategory('all',this)">All</button>
+    <button class="cat-btn" data-cat="anime" onclick="selectCategory('anime',this)">Anime</button>
+    <button class="cat-btn" data-cat="city" onclick="selectCategory('city',this)">City</button>
+    <button class="cat-btn" data-cat="nature" onclick="selectCategory('nature',this)">Nature</button>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="gallery" id="gallery">
+    <!-- Images JS se auto inject hongi -->
+  </div>
+
+  <!-- LOAD MORE -->
+  <div class="load-more-wrap">
+    <button id="loadMoreBtn" onclick="loadMoreImages()">Load More</button>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lb-close" onclick="closeLightbox(event)">✕</button>
+    <button class="lb-prev" onclick="prevLightbox(event)">⟨</button>
+    <img id="lightbox-img" src="" alt="Preview"/>
+    <button class="lb-next" onclick="nextLightbox(event)">⟩</button>
+    <a id="lightbox-download" class="lb-download" href="#" download>⬇ Download</a>
+    <!-- Share Button -->
+    <button id="shareBtn" class="lb-share" onclick="shareImage()">🔗 Share</button>
+    <!-- View Counter -->
+    <div class="view-counter">Views: <span id="viewCount">0</span></div>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <section class="about">
+    <div class="about-inner">
+      <h2>About Prompt.Store</h2>
+      <p>This project is built by Prince Yadav and rights reserved to Prompt.tara. 
+         Save your favorites, share them with friends, and explore the cinematic world.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>© 2025 Prompt.Store</div>
+      <div class="socials">
+        <a href="https://www.instagram.com/prompt.tara?igsh=MWZkZjRxY2R4eHc5Ng==" class="icon" target="_blank">Instagram</a>
+        <a href="mailto:yadavprinnce@outlook.com" class="icon">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
