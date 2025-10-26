@@ -26,7 +26,8 @@ function addImage(index, ext) {
   item.setAttribute("data-category", "anime");
 
   const img = document.createElement("img");
-  img.src = `images/imagebg${index}.${ext}`;
+  // ✅ Corrected path
+  img.src = `imagebg${index}.${ext}`;
   img.alt = `Visual ${index}`;
   img.loading = "lazy";
   img.onclick = () => openLightbox(img);
@@ -204,7 +205,8 @@ window.addEventListener("scroll", () => {
 });
 
 // ---- HERO SLIDESHOW ----
-const slides = ["images/imagebg1.png","images/imagebg2.png","images/imagebg3.png","images/imagebg4.png"];
+// ✅ Corrected paths
+const slides = ["imagebg1.png","imagebg2.png","imagebg3.png","imagebg4.png"];
 let slideIndex = 0;
 function nextSlide() { slideControl(1); }
 function prevSlide() { slideControl(-1); }
